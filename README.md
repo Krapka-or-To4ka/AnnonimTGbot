@@ -14,7 +14,7 @@
 1. Клонуйте репозиторій:
 ```bash
    git clone https://github.com/Krapka-or-To4ka/AnnonimTGbothttps://github.com/Krapka-or-To4ka/AnnonimTGbot
-   cd anon-bot
+   cd AnnonimTGbot
 ```
 2.Встановіть залежності:
 ```bash
@@ -23,10 +23,12 @@ pip install -r requirements.txt
 Створіть .env файл у кореневій директорії з вмістом:
 ```env
 KEY=your_secret_salt
+TOKEN=your_telegram_bot_token
 ```
 KEY використовується для шифрування/дешифрування ID користувачів (сіль)
-```
 # 🧱 Залежності
+```
+
 aiogram==3.20.0.post0 — Telegram бот-фреймворк
 
 python-dotenv==1.1.1 — завантаження змінних середовища з .env

@@ -1,13 +1,13 @@
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup,ReplyKeyboardMarkup,KeyboardButton
 def get_keyboard(id):
     send_keyboard = InlineKeyboardMarkup(
-        inline_keyboard=[[InlineKeyboardButton(text="Відправити ще",callback_data=F'send_to:{id}')]]
+        inline_keyboard=[[InlineKeyboardButton(text="Відправити ще",callback_data=F'send:more:{id}')]]
         )
     return send_keyboard
 
 def get_keyboard_reply(id):
     send_keyboard = InlineKeyboardMarkup(
-        inline_keyboard=[[InlineKeyboardButton(text="Відповісти",callback_data=F'reply_to:{id}')]]
+        inline_keyboard=[[InlineKeyboardButton(text="Відповісти",callback_data=F'send:reply:{id}')]]
         )
     return send_keyboard
 
