@@ -51,6 +51,6 @@ async def send(message:Message,user_manager:Manager):
             god_account += 1
         except:
             bad_account += 1
-        asyncio.sleep(time)
+        await asyncio.sleep(time)
     await message.reply(f"Успішно переслано!\nУспішно:{god_account}\nНеуспішно{bad_account}")
 
