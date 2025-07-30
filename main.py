@@ -61,10 +61,14 @@ async def main(cipher,bot,dp,admins,db:DataBase):
     
     try:
         await dp.start_polling(bot)
-    except KeyboardInterrupt:
+    finally:
         logger.info("Закриваємо програму....")
-        await db.close()
-        logger.info("БД ЗАКРИТА")
+        if not (db is None):
+            await db.close()
+            logger.info("БД ЗАКРИТА")
+
 if __name__ == "__main__":
-    
-    asyncio.run(main(**get_info_bot()))
+    try:
+        asyncio.run(main(**get_info_bot()))
+    except KeyboardInterrupt:
+        logger.debug("---- Програма Завершена ----")
